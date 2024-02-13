@@ -9,13 +9,13 @@ const ProfesorSchema = Schema({
         type: String,
         required: [true, 'El carne es obligatorio']
     },
-    area:{
+    areaTecnica:{
         type: String,
         required: [true, 'El área en el qué se especializa es obligatoria']
     },
-    usuario:{
+    correo:{
         type: String,
-        required: [true, 'El usuario del sistema es obligatorio'],
+        required: [true, 'El correo del sistema es obligatorio'],
         unique: true
     },
     password:{

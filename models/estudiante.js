@@ -13,9 +13,9 @@ const EstudianteSchema = Schema({
         type: String,
         required: [true, 'El grado del estudiante es obligatorio']
     },
-    usuario:{
+    correo:{
         type: String,
-        required: [true, 'El usuario del sistema es obligatorio'],
+        required: [true, 'El correo del sistema es obligatorio'],
         unique: true
     },
     password:{
