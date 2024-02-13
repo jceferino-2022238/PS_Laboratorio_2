@@ -26,5 +26,17 @@ const EstudianteSchema = Schema({
         type: String,
         require: true,
         enum: ["STUDENT_ROLE"]
+    },
+    estado:{
+        type: Boolean,
+        default: true
     }
 });
+
+EstudianteSchema.methods.toJSON = function(){
+    const{__v,password, _id, ...estudiante} = this.toObject();
+    estudiante.uid = _id;
+    return estudiante;
+};  
+
+module.exports = model('Estudiante', EstudianteSchema);

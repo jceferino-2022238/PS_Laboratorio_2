@@ -26,5 +26,17 @@ const ProfesorSchema = Schema({
         type: String,
         require: true,
         enum: ["TEACHER_ROLE"]
+    },
+    estado:{
+        type: Boolean,
+        default: true
     }
 });
+
+ProfesorSchema.methods.toJSON = function(){
+    const{__v,password, _id, ...profesor} = this.toObject();
+    profesor.uid = _id;
+    return profesor;
+};
+
+module.exports = model('Profesor', ProfesorSchema);
