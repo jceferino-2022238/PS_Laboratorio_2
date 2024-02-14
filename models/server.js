@@ -28,6 +28,7 @@ class Server{
     routes(){
         this.app.use(this.authPath, require('../routes/auth.routes'));
         this.app.use(this.estudiantepath, require('../routes/estudiantes.routes'));
+        this.app.use(this.profesorespath, require('../routes/profesores.routes'))
     }
 
     listen(){
