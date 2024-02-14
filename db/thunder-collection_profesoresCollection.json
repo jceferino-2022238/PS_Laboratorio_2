@@ -1,0 +1,67 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "profesoresCollection",
+    "dateExported": "2024-02-14T23:16:21.963Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f94ebf51-55ab-4421-9370-c99692d61d2d",
+            "colId": "7190ff31-7648-4a97-94c2-513d56865616",
+            "containerId": "",
+            "name": "registro profesores",
+            "url": "http://localhost:3000/api/profesores",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-14T22:17:19.104Z",
+            "modified": "2024-02-14T23:10:18.543Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Edgar Suárez 2\",\n  \"carne\":\"2022en9\",\n  \"areaTecnica\":\"Ética\",\n  \"correo\":\"edgars2@gmail.com\",\n  \"password\":\"123456opl\",\n  \"role\":\"TEACHER_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "afe50269-bf71-4168-921f-c9d0e7690e2d",
+            "colId": "7190ff31-7648-4a97-94c2-513d56865616",
+            "containerId": "",
+            "name": "get profesores",
+            "url": "http://localhost:3000/api/profesores?desde=0&limite=5",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-14T22:22:43.244Z",
+            "modified": "2024-02-14T23:15:03.331Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "desde",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "limite",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "d1a4b48e-f239-4b4b-9053-2c2b3e12a018",
+            "colId": "7190ff31-7648-4a97-94c2-513d56865616",
+            "containerId": "",
+            "name": "get ProfesorById",
+            "url": "http://localhost:3000/api/profesores/65cd3c9cc5cbd864d6f07377",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-14T22:24:47.211Z",
+            "modified": "2024-02-14T22:25:17.427Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

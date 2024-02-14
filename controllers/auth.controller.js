@@ -2,7 +2,8 @@ const { request, response } = require("express");
 const Estudiante = require('../models/estudiante');
 const Profesor = require('../models/profesor');
 const bycryptjs = require('bcryptjs');
-const { generarJWT } = require('../helpers/generar-jwt');
+const { generarJWTEstudiante } = require('../helpers/generar-jwt');
+const { generarJWTProfesor } = require('../helpers/generar-jwt') 
 
 const loginEstudiante = async (req = request, res = response) =>{
     const { correo, password } = req.body;
@@ -26,7 +27,7 @@ const loginEstudiante = async (req = request, res = response) =>{
                 msg: "La contraseña es incorrecta"
             })
         }
-        const token = await generarJWT(estudiante.id);
+        const token = await generarJWTEstudiante(estudiante.id);
 
         res.status(200).json({
             msg: "Bienvenido al sistema, ingresó como estudiante",
@@ -62,7 +63,7 @@ const loginProfesor = async (req = request, res = response) =>{
                 msg: "La contraseña es incorrecta"
             })
         }
-        const token = await generarJWT(profesor.id);
+        const token = await generarJWTProfesor(profesor.id);
         res.status(200).json({
             msg: "Bienvenido al sistema, ingresó como profesor",
             profesor,
