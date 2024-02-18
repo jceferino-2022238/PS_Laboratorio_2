@@ -1,0 +1,100 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cursosCollection",
+    "dateExported": "2024-02-18T22:21:22.097Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9ca6e365-1ba7-4dda-a317-a10135768286",
+            "colId": "8d471695-f0f9-4493-80ac-053b19dfae49",
+            "containerId": "",
+            "name": "post cursos",
+            "url": "http://localhost:3000/api/cursos",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-18T20:17:02.815Z",
+            "modified": "2024-02-18T20:22:06.253Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Tecnología3\",\n  \"jornada\":\"Vespertina\",\n  \"descripcion\":\"Curso enfocado en tecnologías de la carrera\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "acb18128-6c61-4e34-90e1-d4bf04956008",
+            "colId": "8d471695-f0f9-4493-80ac-053b19dfae49",
+            "containerId": "",
+            "name": "get cursos",
+            "url": "http://localhost:3000/api/cursos?desde=1&limite=4",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-18T20:19:51.793Z",
+            "modified": "2024-02-18T20:23:09.935Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "desde",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limite",
+                    "value": "4",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "6b9f718e-52ed-4524-9c85-d2deff50e9e4",
+            "colId": "8d471695-f0f9-4493-80ac-053b19dfae49",
+            "containerId": "",
+            "name": "get CursoById",
+            "url": "http://localhost:3000/api/cursos/65d26692468d8d4321a6511c",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-18T20:24:08.892Z",
+            "modified": "2024-02-18T20:24:47.512Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b6bf8eb9-5961-4fa7-b9fd-0b3663cb180e",
+            "colId": "8d471695-f0f9-4493-80ac-053b19dfae49",
+            "containerId": "",
+            "name": "put Cursos",
+            "url": "http://localhost:3000/api/cursos/65d266e6566d974738d123fd",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-02-18T20:26:04.200Z",
+            "modified": "2024-02-18T20:27:35.366Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"TecnologíaUV\",\n  \"jornada\":\"Vespertina\",\n  \"descripcion\":\"Curso enfocado en tecnologías de la carrera\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "acd10890-fd05-4879-8743-0e41d7300cca",
+            "colId": "8d471695-f0f9-4493-80ac-053b19dfae49",
+            "containerId": "",
+            "name": "delete Curso",
+            "url": "http://localhost:3000/api/cursos/65d26692468d8d4321a6511c",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-02-18T20:44:15.458Z",
+            "modified": "2024-02-18T20:47:19.246Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
