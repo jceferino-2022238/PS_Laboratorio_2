@@ -1,44 +1,25 @@
 {
     "client": "Thunder Client",
     "collectionName": "loginCollection",
-    "dateExported": "2024-02-14T23:16:28.891Z",
+    "dateExported": "2024-02-18T09:35:02.969Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "959e7129-f113-402b-970f-3a6915df4705",
-            "colId": "a614323f-097c-4b27-a1ce-24e40cf17013",
+            "_id": "abf59482-e8f6-4bcc-a42a-228fe9ef75c8",
+            "colId": "416c1b13-f08c-4d63-b894-54c87fa88528",
             "containerId": "",
-            "name": "loginEstudiantes",
-            "url": "http://localhost:3000/api/auth/loginEstudiante",
+            "name": "login",
+            "url": "http://localhost:3000/api/auth/login",
             "method": "POST",
-            "sortNum": 10000,
-            "created": "2024-02-14T22:37:29.992Z",
-            "modified": "2024-02-14T22:43:39.334Z",
+            "sortNum": 30000,
+            "created": "2024-02-18T07:41:52.826Z",
+            "modified": "2024-02-18T09:27:19.812Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"correo\":\"ambrocio3@gmail.com\",\n  \"password\":\"123456789\"\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "7a8464ef-c7ea-477b-ada9-484dc3362c05",
-            "colId": "a614323f-097c-4b27-a1ce-24e40cf17013",
-            "containerId": "",
-            "name": "loginProfesor",
-            "url": "http://localhost:3000/api/auth/loginProfesor",
-            "method": "POST",
-            "sortNum": 20000,
-            "created": "2024-02-14T22:52:19.340Z",
-            "modified": "2024-02-14T23:12:05.631Z",
-            "headers": [],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"correo\":\"edgars2@gmail.com\",\n  \"password\":\"123456opl\"\n}",
+                "raw": "{\n  \"correo\":\"edgars2@gmail.com\",\n  \"password\":\"123456opl\",\n  \"role\":\"STUDENT_ROLE\"\n}",
                 "form": []
             },
             "tests": []
