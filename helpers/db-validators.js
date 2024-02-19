@@ -8,6 +8,13 @@ const existenteEmailE = async (correo= '') =>{
         throw new Error(`El correo ${correo} ya está registrado`);
     }
 }
+const mayorA3 = async(id = '') =>{
+    const estudiante = await Estudiante.findOne({_id: id});
+    const cursos = estudiante.cursos
+    if(cursos.length >= 3){
+        throw new Error('Este estudiante ya cuenta con el máximo de cursos asignables');
+    }
+}
 const cursoNombre = async(nombre = '') =>{
     const existeCurso = await Curso.findOne({nombre});
     if(existeCurso){
@@ -53,5 +60,6 @@ module.exports = {
     existenteEmailE,
     existenteEmailP,
     cursoNombre,
-    existeCursoById
+    existeCursoById,
+    mayorA3,
 }

@@ -30,6 +30,7 @@ const EstudianteSchema = Schema({
     cursos:{
         type: [mongoose.Schema.Types.ObjectId],
         required: true,
+        validate: [arrayLimite, 'No pueden haber más de 3 cursos asignados'],
         ref: "cursosEstudiantes"
     },
     estado:{
@@ -37,6 +38,10 @@ const EstudianteSchema = Schema({
         default: true
     }
 });
+
+function arrayLimite(val) {
+    return val.length <= 3;
+}
 
 EstudianteSchema.methods.toJSON = function(){
     const{__v, password, _id, ...estudiante} = this.toObject();

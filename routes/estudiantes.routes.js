@@ -1,8 +1,10 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { estudiantesGet, getEstudianteById, estudiantesPost, asignarCursosE, visualizarCursosE, putEstudiante, estudiantesDelete } = require('../controllers/estudiante.controller');
-const { existeEstudianteById, existenteEmailE, esRoleValido } = require('../helpers/db-validators');
+const { existeEstudianteById, existenteEmailE, esRoleValido, mayorA3} = require('../helpers/db-validators');
 const { validarCampos } = require('../middlewares/validar-campos');
+const { validarJWTEstudiante } = require('../middlewares/validar-jwt');
+const { esEstudianteRole } = require('../middlewares/validar-roles');
 const router = Router();
 router.get("/", estudiantesGet);
 
@@ -30,6 +32,8 @@ router.post(
 router.put(
     "/putEstudiantes/:id",
     [
+        validarJWTEstudiante,
+        esEstudianteRole,
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeEstudianteById),
         validarCampos
@@ -38,6 +42,8 @@ router.put(
 router.delete(
     "/:id",
     [
+        validarJWTEstudiante,
+        esEstudianteRole,
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeEstudianteById),
         validarCampos
@@ -46,6 +52,9 @@ router.delete(
 router.put(
     "/asignarCursosE/:id",
     [
+        validarJWTEstudiante,
+        esEstudianteRole,
+        check('id').custom(mayorA3),
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeEstudianteById),
         validarCampos
@@ -54,6 +63,8 @@ router.put(
 router.get(
     "/visualizarCursosE/:id",
     [
+        validarJWTEstudiante,
+        esEstudianteRole,
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeEstudianteById),
         validarCampos

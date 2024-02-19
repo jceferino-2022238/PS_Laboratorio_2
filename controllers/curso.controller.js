@@ -1,4 +1,6 @@
 const Curso = require('../models/curso');
+const Estudiante = require('../models/estudiante');
+const Profesor = require('../models/profesor');
 const { response } = require('express')
 
 const cursosGet = async (req, res = response) =>{
@@ -45,6 +47,7 @@ const cursosDelete = async (req, res) => {
     const {id} = req.params;
     const curso = await Curso.findByIdAndUpdate(id, {estado: false});
 
+    await Estudiante.updateMany({ cursos: id }, { $pull: { cursos: id } });
     res.status(200).json({
         msg: "Curso a eliminar",
         curso

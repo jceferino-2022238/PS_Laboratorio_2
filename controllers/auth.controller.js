@@ -8,81 +8,57 @@ const Role = require('../models/role');
 
 const login = async (req = request, res = response) =>{
     const { correo, password, role } = req.body;
-    if (role == 'STUDENT_ROL') {
-        try{
-            const estudiante = await Estudiante.findOne({correo});
-            if(!estudiante){
-                return res.status(400).json({
-                    msg: "Credenciales incorrectas, correo no existe en la base de datos."
-                });
-            }
-            if(!estudiante.estado){
-                return res.status(400).json({
-                    msg: "El estudiante no existe en la base de datos."
-                })
-            }
-            const validarPassword = bycryptjs.compareSync(password, estudiante.password);
-            if(!validarPassword){
-                return res.status(400).json({
-                    msg: "La contraseña es incorrecta"
-                })
-            }
-            if(role == estudiante.role){
-                return res.status(400).json({
-                    msg: "El rol ingresado no coincide con el rol de las credenciales."
-                });
-            }
-            const token = await generarJWTEstudiante(estudiante.id);
-    
-            res.status(200).json({
-                msg: "Bienvenido al sistema, ingresó como estudiante",
-                estudiante,
-                token
-            })
-        } catch (e) {
-            console.log(e);
-            res.status(500).json({
-                msg: "Comuníquese con el admin"
+    try {
+        let usuario;
+        if (role === 'STUDENT_ROLE') {
+            usuario = await Estudiante.findOne({ correo });
+        } else if (role === 'TEACHER_ROLE') {
+            usuario = await Profesor.findOne({ correo });
+        } else {
+            return res.status(400).json({
+                msg: "El rol enviado no es válido"
             });
-        };
-    } else if(role == 'TEACHER_ROLE'){
-        try {
-            const profesor = await Profesor.findOne({correo});
-    
-            if(!profesor){
-                return res.status(400).json({
-                    msg: "Credenciales incorrectas, correo no existe en la base de datos."
-                })
-            }
-            if(!profesor.estado){
-                return res.status(400).json({
-                    msg: "El profesor no existe en la base de datos."
-                })
-            }
-            const validarPassword = bycryptjs.compareSync(password, profesor.password);
-            if (!validarPassword) {
-                return res.status(400).json({
-                    msg: "La contraseña es incorrecta"
-                })
-            }
-            const token = await generarJWTProfesor(profesor.id);
-            res.status(200).json({
-                msg: "Bienvenido al sistema, ingresó como profesor",
-                profesor,
-                token
-            })
-        } catch (e) {
-            console.log(e);
-            res.status(500).json({
-                msg: "Comuníquese con el admin"
+        }
+
+        if (!usuario) {
+            return res.status(400).json({
+                msg: "Credenciales incorrectas, correo no existe en la base de datos."
             });
-        };
-    }else{
-        return res.status(400).json({
-            msg: "El rol enviado no coincide con el rol de las credenciales enviadas"
+        }
+        
+        if (!usuario.estado) {
+            return res.status(400).json({
+                msg: "El usuario no existe en la base de datos."
+            });
+        }
+
+        const validarPassword = bycryptjs.compareSync(password, usuario.password);
+        if (!validarPassword) {
+            return res.status(400).json({
+                msg: "La contraseña es incorrecta"
+            });
+        }
+
+        if (role !== usuario.role) {
+            return res.status(400).json({
+                msg: "El rol ingresado no coincide con el rol almacenado en la base de datos."
+            });
+        }
+
+        const token = (role === 'STUDENT_ROLE') ? await generarJWTEstudiante(usuario.id) : await generarJWTProfesor(usuario.id);
+    
+        res.status(200).json({
+            msg: `Bienvenido al sistema, ingresó como ${role === 'STUDENT_ROLE' ? 'estudiante' : 'profesor'}`,
+            usuario,
+            token
+        });
+    } catch (e) {
+        console.log(e);
+        res.status(500).json({
+            msg: "Comuníquese con el administrador"
         });
     }
-}
+};
 
 module.exports = {
     login

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "estudiantesCollection",
-    "dateExported": "2024-02-19T01:59:37.797Z",
+    "dateExported": "2024-02-19T04:17:57.413Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-18T06:40:37.229Z",
-            "modified": "2024-02-19T01:45:27.883Z",
+            "modified": "2024-02-19T03:49:19.093Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Ambrocio 9\",\n  \"carne\":\"2022385\",\n  \"grado\":\"6to Perito\",\n  \"correo\":\"ambrocio9@gmail.com\",\n  \"password\":\"123456789\",\n  \"role\":\"STUDENT_ROLE\"\n}",
+                "raw": "{\n  \"nombre\":\"prueba2\",\n  \"carne\":\"2022385\",\n  \"grado\":\"6to Perito\",\n  \"correo\":\"prueba2@gmail.com\",\n  \"password\":\"123456\",\n  \"role\":\"STUDENT_ROLE\"\n}",
                 "form": []
             },
             "tests": []
@@ -54,11 +54,11 @@
             "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
             "containerId": "",
             "name": "get EstudianteById",
-            "url": "http://localhost:3000/api/estudiantes/65cd238889bb8ceacb692322",
+            "url": "http://localhost:3000/api/estudiantes/65d2cfbe9a7b50b1da9726e4",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-02-18T06:40:37.231Z",
-            "modified": "2024-02-18T06:40:37.231Z",
+            "modified": "2024-02-19T04:05:59.228Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -68,11 +68,11 @@
             "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
             "containerId": "",
             "name": "delete Estudiantes",
-            "url": "http://localhost:3000/api/estudiantes/65d2b2b7cb019289c7b03c97",
+            "url": "http://localhost:3000/api/estudiantes/65d1b34438caf3d20dd69784",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2024-02-19T01:44:49.460Z",
-            "modified": "2024-02-19T01:58:37.327Z",
+            "modified": "2024-02-19T02:41:50.489Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -82,12 +82,17 @@
             "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
             "containerId": "",
             "name": "put Estudiantes",
-            "url": "http://localhost:3000/api/estudiantes/putEstudiantes/65d2b2b7cb019289c7b03c97",
+            "url": "http://localhost:3000/api/estudiantes/putEstudiantes/65d2cfbe9a7b50b1da9726e4",
             "method": "PUT",
             "sortNum": 50000,
             "created": "2024-02-19T01:47:48.838Z",
-            "modified": "2024-02-19T01:54:23.661Z",
-            "headers": [],
+            "modified": "2024-02-19T04:08:03.546Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyY2ZiZTlhN2I1MGIxZGE5NzI2ZTQiLCJjYXJuZSI6IiIsImdyYWRvIjoiIiwiaWF0IjoxNzA4MzE0ODIxLCJleHAiOjE3MDgzMTg0MjF9.Mdfdk827x3nax5KFJ01fqLvzU-TRo97qZNtrxWwswkE"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",

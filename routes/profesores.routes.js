@@ -3,7 +3,8 @@ const { check } = require('express-validator');
 const { profesoresGet, getProfesorById, profesoresPost, asignarCursosP, visualizarCursosP } = require('../controllers/profesor.controller');
 const { existeProfesorById, existenteEmailP, esRoleValido } = require('../helpers/db-validators');
 const { validarCampos } = require('../middlewares/validar-campos');
-
+const { validarJWTProfesor } = require('../middlewares/validar-jwt');
+const { esProfesorRole } = require('../middlewares/validar-roles');
 const router = Router();
 router.get("/", profesoresGet);
 
@@ -30,6 +31,8 @@ router.post(
 router.put(
     "/asignarCursosP/:id",
     [
+        validarJWTProfesor,
+        esProfesorRole,
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeProfesorById),
         validarCampos
@@ -38,6 +41,8 @@ router.put(
 router.get(
     "/visualizarCursosP/:id",
     [
+        validarJWTProfesor,
+        esProfesorRole,
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeProfesorById),
         validarCampos
