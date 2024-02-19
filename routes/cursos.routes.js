@@ -11,6 +11,7 @@ router.get("/", cursosGet);
 router.get(
     "/:id",
     [
+        
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeCursoById),
         validarCampos

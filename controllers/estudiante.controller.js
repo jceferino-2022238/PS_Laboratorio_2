@@ -27,6 +27,31 @@ const getEstudianteById = async (req, res) => {
   });
 };
 
+const putEstudiante = async (req, res = response) =>{
+  const { id } = req.params;
+  const {_id, nombre, correo, password, role, cursos, ...resto} = req.body;
+
+  if(password){
+    const salt = bcryptjs.genSaltSync();
+    resto.password = bcryptjs.hashSync(password, salt);
+  }
+    await Estudiante.findByIdAndUpdate(id, resto);
+    const estudiante = await Estudiante.findOne({id});
+    res.status(200).json({
+      msg:'Estudiante actualizado exitosamente',
+      estudiante
+    })
+}
+const estudiantesDelete = async (req, res) =>{
+  const {id} = req.params;
+  const estudiante = await Estudiante.findByIdAndUpdate(id, {estado: false});
+
+  res.status(200).json({
+    msg: 'Estudiante a eliminar',
+    estudiante,
+  })
+}
+
 const estudiantesPost = async (req, res) => {
   const { nombre, carne, grado, correo, password, role } = req.body;
   const estudiante = new Estudiante({
@@ -86,4 +111,6 @@ module.exports = {
   estudiantesPost,
   visualizarCursosE,
   asignarCursosE,
+  putEstudiante,
+  estudiantesDelete
 };

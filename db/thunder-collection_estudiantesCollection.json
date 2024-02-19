@@ -1,39 +1,39 @@
 {
     "client": "Thunder Client",
     "collectionName": "estudiantesCollection",
-    "dateExported": "2024-02-14T23:15:47.475Z",
+    "dateExported": "2024-02-19T01:59:37.797Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "c76217b8-ad6a-42b1-bcf4-da5c8fd77467",
-            "colId": "f402f914-5416-49fc-b4e9-cf6c2ee36bbe",
+            "_id": "e2ba53fb-f88d-4c63-80c0-1df9bb5b0b28",
+            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
             "containerId": "",
             "name": "registro estudiantes",
             "url": "http://localhost:3000/api/estudiantes",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-14T20:21:36.720Z",
-            "modified": "2024-02-14T23:09:56.742Z",
+            "created": "2024-02-18T06:40:37.229Z",
+            "modified": "2024-02-19T01:45:27.883Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Ambrocio 7\",\n  \"carne\":\"2022385\",\n  \"grado\":\"6to Perito\",\n  \"correo\":\"ambrocio7@gmail.com\",\n  \"password\":\"123456789\",\n  \"role\":\"STUDENT_ROLE\"\n}",
+                "raw": "{\n  \"nombre\":\"Ambrocio 9\",\n  \"carne\":\"2022385\",\n  \"grado\":\"6to Perito\",\n  \"correo\":\"ambrocio9@gmail.com\",\n  \"password\":\"123456789\",\n  \"role\":\"STUDENT_ROLE\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "54175cef-2ea2-4b83-89e8-0cfd92ced71e",
-            "colId": "f402f914-5416-49fc-b4e9-cf6c2ee36bbe",
+            "_id": "c6d1d1b0-8a8f-447d-a31a-6b3cd145f6b3",
+            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
             "containerId": "",
             "name": "get estudiantes",
             "url": "http://localhost:3000/api/estudiantes?desde=0&limite=5",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-14T20:32:43.940Z",
-            "modified": "2024-02-14T23:09:29.510Z",
+            "created": "2024-02-18T06:40:37.230Z",
+            "modified": "2024-02-18T06:40:37.230Z",
             "headers": [],
             "params": [
                 {
@@ -50,17 +50,50 @@
             "tests": []
         },
         {
-            "_id": "7c75b656-0dd6-4b97-adc1-0b94058e49f5",
-            "colId": "f402f914-5416-49fc-b4e9-cf6c2ee36bbe",
+            "_id": "9a3e0a6d-d41a-4dcb-a924-696429bafd1a",
+            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
             "containerId": "",
             "name": "get EstudianteById",
             "url": "http://localhost:3000/api/estudiantes/65cd238889bb8ceacb692322",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-02-14T20:35:47.773Z",
-            "modified": "2024-02-14T20:36:23.290Z",
+            "created": "2024-02-18T06:40:37.231Z",
+            "modified": "2024-02-18T06:40:37.231Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "35ed5e9d-e10b-4411-8d8e-5b3f4ddc6479",
+            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
+            "containerId": "",
+            "name": "delete Estudiantes",
+            "url": "http://localhost:3000/api/estudiantes/65d2b2b7cb019289c7b03c97",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-02-19T01:44:49.460Z",
+            "modified": "2024-02-19T01:58:37.327Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a45e1bea-2219-4cf6-baee-411fd6383f8f",
+            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
+            "containerId": "",
+            "name": "put Estudiantes",
+            "url": "http://localhost:3000/api/estudiantes/putEstudiantes/65d2b2b7cb019289c7b03c97",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-02-19T01:47:48.838Z",
+            "modified": "2024-02-19T01:54:23.661Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"carne\":\"2022256\",\n  \"grado\":\"5to Perito\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]
