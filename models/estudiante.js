@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const {Schema, model, default: mongoose} = require('mongoose');
 
 const EstudianteSchema = Schema({
     nombre:{
@@ -26,6 +26,11 @@ const EstudianteSchema = Schema({
         type: String,
         require: true,
         enum: ["STUDENT_ROLE"]
+    },
+    cursos:{
+        type: [mongoose.Schema.Types.ObjectId],
+        required: true,
+        ref: "cursosEstudiantes"
     },
     estado:{
         type: Boolean,

@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
-const { profesoresGet, getProfesorById, profesoresPost } = require('../controllers/profesor.controller');
+const { profesoresGet, getProfesorById, profesoresPost, asignarCursosP, visualizarCursosP } = require('../controllers/profesor.controller');
 const { existeProfesorById, existenteEmailP, esRoleValido } = require('../helpers/db-validators');
 const { validarCampos } = require('../middlewares/validar-campos');
 
@@ -27,5 +27,19 @@ router.post(
         check("role").custom(esRoleValido),
         validarCampos
     ], profesoresPost);
+router.put(
+    "/asignarCursosP/:id",
+    [
+        check('id', 'No es un id válido').isMongoId(),
+        check('id').custom(existeProfesorById),
+        validarCampos
+    ], asignarCursosP);
 
+router.get(
+    "/visualizarCursosP/:id",
+    [
+        check('id', 'No es un id válido').isMongoId(),
+        check('id').custom(existeProfesorById),
+        validarCampos
+    ], visualizarCursosP);
 module.exports = router;

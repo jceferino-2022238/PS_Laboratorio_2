@@ -1,0 +1,42 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cursosProfesoresCollection",
+    "dateExported": "2024-02-19T00:27:28.695Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9e13b2f3-a0fc-4b2d-877c-c4d5b95003fa",
+            "colId": "adaefd82-a711-4ef0-802e-febceb3e4aeb",
+            "containerId": "",
+            "name": "visualizar CursosProfesores",
+            "url": "http://localhost:3000/api/profesores/visualizarCursosP/65d1b4b0bb5d7d5745e8d83e",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-19T00:15:51.523Z",
+            "modified": "2024-02-19T00:21:49.492Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9ba3b2b2-787c-486a-852a-f217de80b31e",
+            "colId": "adaefd82-a711-4ef0-802e-febceb3e4aeb",
+            "containerId": "",
+            "name": "asignar CursosProfesores",
+            "url": "http://localhost:3000/api/profesores/asignarCursosP/65d1b4b0bb5d7d5745e8d83e",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-02-19T00:16:07.895Z",
+            "modified": "2024-02-19T00:21:41.375Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"cursos\":[\"65d266ea566d974738d12400\",\"65d266ee566d974738d12403\",\"65d292a02a3b4a3d7763fdec\"]\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

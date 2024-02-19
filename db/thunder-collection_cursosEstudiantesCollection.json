@@ -1,0 +1,42 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cursosEstudiantesCollection",
+    "dateExported": "2024-02-19T00:27:20.170Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9a07e57d-c628-410a-bb4b-bf950db3e646",
+            "colId": "8610fa5c-9ae3-45e8-9f8f-31e3c7d43899",
+            "containerId": "",
+            "name": "visualizar CursosEstudiantes",
+            "url": "http://localhost:3000/api/estudiantes/visualizarCursosE/65d1b34438caf3d20dd69784",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-18T23:23:36.789Z",
+            "modified": "2024-02-19T00:06:03.281Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f333fe74-7169-4801-bd5b-10912d72c119",
+            "colId": "8610fa5c-9ae3-45e8-9f8f-31e3c7d43899",
+            "containerId": "",
+            "name": "asignar CursosEstudiantes",
+            "url": "http://localhost:3000/api/estudiantes/asignarCursosE/65d1b34438caf3d20dd69784",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-02-18T23:25:30.631Z",
+            "modified": "2024-02-18T23:39:20.450Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"cursos\":[\"65d266ea566d974738d12400\",\"65d266ee566d974738d12403\",\"65d292a02a3b4a3d7763fdec\"]\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
