@@ -1,39 +1,39 @@
 {
     "client": "Thunder Client",
     "collectionName": "estudiantesCollection",
-    "dateExported": "2024-02-19T04:17:57.413Z",
+    "dateExported": "2024-02-27T20:24:21.061Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "e2ba53fb-f88d-4c63-80c0-1df9bb5b0b28",
-            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
+            "_id": "643de0c6-a668-4fb5-aa8c-b03ab4b241e6",
+            "colId": "03c817e7-d972-4f08-9ab9-32a99fc1f1b6",
             "containerId": "",
             "name": "registro estudiantes",
             "url": "http://localhost:3000/api/estudiantes",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-18T06:40:37.229Z",
-            "modified": "2024-02-19T03:49:19.093Z",
+            "created": "2024-02-27T18:51:24.328Z",
+            "modified": "2024-02-27T20:10:03.784Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"prueba2\",\n  \"carne\":\"2022385\",\n  \"grado\":\"6to Perito\",\n  \"correo\":\"prueba2@gmail.com\",\n  \"password\":\"123456\",\n  \"role\":\"STUDENT_ROLE\"\n}",
+                "raw": "{\n  \"nombre\":\"pruebaE\",\n  \"carne\":\"2022385\",\n  \"grado\":\"6to Perito\",\n  \"correo\":\"pruebaE@gmail.com\",\n  \"password\":\"123456\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "c6d1d1b0-8a8f-447d-a31a-6b3cd145f6b3",
-            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
+            "_id": "3a793bdd-c697-4f0a-8673-2f745bb0eed3",
+            "colId": "03c817e7-d972-4f08-9ab9-32a99fc1f1b6",
             "containerId": "",
             "name": "get estudiantes",
-            "url": "http://localhost:3000/api/estudiantes?desde=0&limite=5",
+            "url": "http://localhost:3000/api/estudiantes?desde=0&limite=6",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-18T06:40:37.230Z",
-            "modified": "2024-02-18T06:40:37.230Z",
+            "created": "2024-02-27T18:51:24.329Z",
+            "modified": "2024-02-27T20:17:38.006Z",
             "headers": [],
             "params": [
                 {
@@ -43,60 +43,65 @@
                 },
                 {
                     "name": "limite",
-                    "value": "5",
+                    "value": "6",
                     "isPath": false
                 }
             ],
             "tests": []
         },
         {
-            "_id": "9a3e0a6d-d41a-4dcb-a924-696429bafd1a",
-            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
+            "_id": "de505e8e-6d25-4182-ae30-e844034cc860",
+            "colId": "03c817e7-d972-4f08-9ab9-32a99fc1f1b6",
             "containerId": "",
             "name": "get EstudianteById",
-            "url": "http://localhost:3000/api/estudiantes/65d2cfbe9a7b50b1da9726e4",
+            "url": "http://localhost:3000/api/estudiantes/65de419b99bbfd100abaee32",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-02-18T06:40:37.231Z",
-            "modified": "2024-02-19T04:05:59.228Z",
+            "created": "2024-02-27T18:51:24.330Z",
+            "modified": "2024-02-27T20:10:20.943Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "35ed5e9d-e10b-4411-8d8e-5b3f4ddc6479",
-            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
+            "_id": "b189cf9d-5af4-41e1-8c87-df977a5e5cd0",
+            "colId": "03c817e7-d972-4f08-9ab9-32a99fc1f1b6",
             "containerId": "",
             "name": "delete Estudiantes",
             "url": "http://localhost:3000/api/estudiantes/65d1b34438caf3d20dd69784",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-02-19T01:44:49.460Z",
-            "modified": "2024-02-19T02:41:50.489Z",
-            "headers": [],
+            "created": "2024-02-27T18:51:24.331Z",
+            "modified": "2024-02-27T20:07:18.236Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
             "params": [],
             "tests": []
         },
         {
-            "_id": "a45e1bea-2219-4cf6-baee-411fd6383f8f",
-            "colId": "126b400b-8fb2-4e4c-896f-4ad3f8163352",
+            "_id": "09811950-c7ff-4ebd-8e99-2b9bf1395d68",
+            "colId": "03c817e7-d972-4f08-9ab9-32a99fc1f1b6",
             "containerId": "",
             "name": "put Estudiantes",
-            "url": "http://localhost:3000/api/estudiantes/putEstudiantes/65d2cfbe9a7b50b1da9726e4",
+            "url": "http://localhost:3000/api/estudiantes/putEstudiantes/65de419b99bbfd100abaee32",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-02-19T01:47:48.838Z",
-            "modified": "2024-02-19T04:08:03.546Z",
+            "created": "2024-02-27T18:51:24.332Z",
+            "modified": "2024-02-27T20:20:29.807Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyY2ZiZTlhN2I1MGIxZGE5NzI2ZTQiLCJjYXJuZSI6IiIsImdyYWRvIjoiIiwiaWF0IjoxNzA4MzE0ODIxLCJleHAiOjE3MDgzMTg0MjF9.Mdfdk827x3nax5KFJ01fqLvzU-TRo97qZNtrxWwswkE"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNDE5Yjk5YmJmZDEwMGFiYWVlMzIiLCJjYXJuZSI6IiIsImdyYWRvIjoiIiwiaWF0IjoxNzA5MDY1MjA5LCJleHAiOjE3MDkwNjg4MDl9.SM-FhQNsLFC3lqsujyCUt_mxXxClAX1o8z46o-wYsa8"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"carne\":\"2022256\",\n  \"grado\":\"5to Perito\"\n}",
+                "raw": "{\n  \"carne\":\"2022255\",\n  \"grado\":\"5to Perito\"\n}",
                 "form": []
             },
             "tests": []

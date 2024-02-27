@@ -53,14 +53,13 @@ const estudiantesDelete = async (req, res) =>{
 }
 
 const estudiantesPost = async (req, res) => {
-  const { nombre, carne, grado, correo, password, role } = req.body;
+  const { nombre, carne, grado, correo, password } = req.body;
   const estudiante = new Estudiante({
     nombre,
     carne,
     grado,
     correo,
-    password,
-    role,
+    password
   });
   if (password) {
     const salt = bcryptjs.genSaltSync();
@@ -69,6 +68,17 @@ const estudiantesPost = async (req, res) => {
   await estudiante.save();
   res.status(202).json({
     estudiante,
+  });
+};
+
+const visualizarCursosE = async (req, res = response) => {
+  const { id } = req.params;
+  const estudiante = await Estudiante.findOne({ _id: id });
+  const cursos = estudiante.cursos;
+  const cursosE = await Curso.find({ _id: { $in: cursos } });
+  const nombresCursos = cursosE.map(curso => curso.nombre)
+  res.status(200).json({
+    msg: `Los cursos del estudiante son los siguientes: ${nombresCursos.join(', ')}`,
   });
 };
 
@@ -104,17 +114,6 @@ const asignarCursosE = async (req, res = response) => {
     console.log(e);
     res.status(500).json({error: 'No se asignaron los cursos'})
   }
-};
-
-const visualizarCursosE = async (req, res = response) => {
-  const { id } = req.params;
-  const estudiante = await Estudiante.findOne({ _id: id });
-  const cursos = estudiante.cursos;
-  const cursosE = await Curso.find({ _id: { $in: cursos } });
-  const nombresCursos = cursosE.map(curso => curso.nombre)
-  res.status(200).json({
-    msg: `Los cursos del estudiante son los siguientes: ${nombresCursos.join(', ')}`,
-  });
 };
 
 module.exports = {

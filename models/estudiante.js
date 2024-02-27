@@ -24,8 +24,7 @@ const EstudianteSchema = Schema({
     },
     role:{
         type: String,
-        require: true,
-        enum: ["STUDENT_ROLE"]
+        default: "STUDENT_ROLE"
     },
     cursos:{
         type: [mongoose.Schema.Types.ObjectId],

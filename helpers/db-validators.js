@@ -1,4 +1,3 @@
-const Role = require('../models/role');
 const Estudiante = require('../models/estudiante');
 const Profesor = require('../models/profesor');
 const Curso = require('../models/curso')
@@ -27,12 +26,6 @@ const existenteEmailP = async (correo= '') =>{
         throw new Error(`El correo ${correo} ya está registrado`);
     }
 }
-const esRoleValido = async (role = '') =>{
-    const existeRol = await Role.findOne({role});
-    if(!existeRol){
-        throw new Error(`El role ${role} no existe en la base de datos`);
-    }
-}
 
 const existeEstudianteById = async (id = '') => {
     const existeEstudiante = await Estudiante.findOne({id});
@@ -56,7 +49,6 @@ const existeCursoById = async (id = '') =>{
 module.exports = {
     existeEstudianteById,
     existeProfesorById,
-    esRoleValido,
     existenteEmailE,
     existenteEmailP,
     cursoNombre,

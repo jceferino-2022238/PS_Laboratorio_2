@@ -27,14 +27,13 @@ const getProfesorById = async (req, res) => {
 };
 
 const profesoresPost = async (req, res) => {
-  const { nombre, carne, areaTecnica, correo, password, role } = req.body;
+  const { nombre, carne, areaTecnica, correo, password } = req.body;
   const profesor = new Profesor({
     nombre,
     carne,
     areaTecnica,
     correo,
-    password,
-    role,
+    password
   });
 
   if (password) {

@@ -7,7 +7,7 @@ const generarJWTEstudiante = (uid = '', carne = '', grado = '') =>{
             payload,
             process.env.SECRETORPRIVATEKEY,
             {
-                expiresIn: '1h',
+                expiresIn: '10h',
             },
             (err,token)=>{
                 err ? (console.log(err),reject('No se puede generar el token del estudiante')): resolve(token);
@@ -23,7 +23,7 @@ const generarJWTProfesor = (uid = '', carne = '', area = '') =>{
             payload,
             process.env.SECRETORPRIVATEKEY,
             {
-                expiresIn: '1h',
+                expiresIn: '10h',
             },
             (err, token)=>{
                 err ? (console.log(err),reject('No se puede generar el token del profesor')): resolve(token);

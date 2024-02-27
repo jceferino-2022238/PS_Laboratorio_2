@@ -4,22 +4,14 @@ const Profesor = require('../models/profesor');
 const bycryptjs = require('bcryptjs');
 const { generarJWTEstudiante } = require('../helpers/generar-jwt');
 const { generarJWTProfesor } = require('../helpers/generar-jwt') 
-const Role = require('../models/role');
 
 const login = async (req = request, res = response) =>{
-    const { correo, password, role } = req.body;
+    const { correo, password} = req.body;
     try {
-        let usuario;
-        if (role === 'STUDENT_ROLE') {
-            usuario = await Estudiante.findOne({ correo });
-        } else if (role === 'TEACHER_ROLE') {
-            usuario = await Profesor.findOne({ correo });
-        } else {
-            return res.status(400).json({
-                msg: "El rol enviado no es válido"
-            });
+        let usuario = await Estudiante.findOne({ correo });
+        if (!usuario || usuario.role !== 'STUDENT_ROLE'){
+            usuario = await Profesor.findOne({ correo })
         }
-
         if (!usuario) {
             return res.status(400).json({
                 msg: "Credenciales incorrectas, correo no existe en la base de datos."
@@ -39,11 +31,7 @@ const login = async (req = request, res = response) =>{
             });
         }
 
-        if (role !== usuario.role) {
-            return res.status(400).json({
-                msg: "El rol ingresado no coincide con el rol almacenado en la base de datos."
-            });
-        }
+        const role = usuario.role;
 
         const token = (role === 'STUDENT_ROLE') ? await generarJWTEstudiante(usuario.id) : await generarJWTProfesor(usuario.id);
     

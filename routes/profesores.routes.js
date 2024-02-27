@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { profesoresGet, getProfesorById, profesoresPost, asignarCursosP, visualizarCursosP } = require('../controllers/profesor.controller');
-const { existeProfesorById, existenteEmailP, esRoleValido } = require('../helpers/db-validators');
+const { existeProfesorById, existenteEmailP} = require('../helpers/db-validators');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWTProfesor } = require('../middlewares/validar-jwt');
 const { esProfesorRole } = require('../middlewares/validar-roles');
@@ -25,7 +25,6 @@ router.post(
         check("password", "El password debe ser mayor a 6 caracteres").isLength({min:6}),
         check("correo", "Este no es un correo válido").isEmail(),
         check("correo").custom(existenteEmailP),
-        check("role").custom(esRoleValido),
         validarCampos
     ], profesoresPost);
 router.put(

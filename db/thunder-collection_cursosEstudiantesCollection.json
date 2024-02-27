@@ -1,44 +1,49 @@
 {
     "client": "Thunder Client",
     "collectionName": "cursosEstudiantesCollection",
-    "dateExported": "2024-02-19T04:18:15.309Z",
+    "dateExported": "2024-02-27T20:24:02.476Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "9a07e57d-c628-410a-bb4b-bf950db3e646",
-            "colId": "8610fa5c-9ae3-45e8-9f8f-31e3c7d43899",
+            "_id": "9294cc25-ef03-4eca-a2b0-d683b750a146",
+            "colId": "42960b2a-ec65-4b0d-8d45-95181e8c84bd",
             "containerId": "",
             "name": "visualizar CursosEstudiantes",
-            "url": "http://localhost:3000/api/estudiantes/visualizarCursosE/65d2c00bc7568a9554804bc7",
+            "url": "http://localhost:3000/api/estudiantes/visualizarCursosE/65de419b99bbfd100abaee32",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-02-18T23:23:36.789Z",
-            "modified": "2024-02-19T02:43:03.219Z",
-            "headers": [],
+            "created": "2024-02-27T18:51:24.304Z",
+            "modified": "2024-02-27T20:17:53.192Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNDE5Yjk5YmJmZDEwMGFiYWVlMzIiLCJjYXJuZSI6IiIsImdyYWRvIjoiIiwiaWF0IjoxNzA5MDY0NzgyLCJleHAiOjE3MDkwNjgzODJ9.SAQ2KYKGQYRZpabCNS5pxaapMfWeW4_lIl4xB2hykAI"
+                }
+            ],
             "params": [],
             "tests": []
         },
         {
-            "_id": "f333fe74-7169-4801-bd5b-10912d72c119",
-            "colId": "8610fa5c-9ae3-45e8-9f8f-31e3c7d43899",
+            "_id": "47e93786-91c5-4c5b-aea0-46a1ceb6ff82",
+            "colId": "42960b2a-ec65-4b0d-8d45-95181e8c84bd",
             "containerId": "",
             "name": "asignar CursosEstudiantes",
-            "url": "http://localhost:3000/api/estudiantes/asignarCursosE/65d2cfbe9a7b50b1da9726e4",
+            "url": "http://localhost:3000/api/estudiantes/asignarCursosE/65de419b99bbfd100abaee32",
             "method": "PUT",
             "sortNum": 20000,
-            "created": "2024-02-18T23:25:30.631Z",
-            "modified": "2024-02-19T04:15:09.445Z",
+            "created": "2024-02-27T18:51:24.305Z",
+            "modified": "2024-02-27T20:17:19.482Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyY2ZiZTlhN2I1MGIxZGE5NzI2ZTQiLCJjYXJuZSI6IiIsImdyYWRvIjoiIiwiaWF0IjoxNzA4MzE0ODIxLCJleHAiOjE3MDgzMTg0MjF9.Mdfdk827x3nax5KFJ01fqLvzU-TRo97qZNtrxWwswkE"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRlNDE5Yjk5YmJmZDEwMGFiYWVlMzIiLCJjYXJuZSI6IiIsImdyYWRvIjoiIiwiaWF0IjoxNzA5MDY0NzgyLCJleHAiOjE3MDkwNjgzODJ9.SAQ2KYKGQYRZpabCNS5pxaapMfWeW4_lIl4xB2hykAI"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"cursos\":[\"65d2d2130a194cac952b9810\"]\n}",
+                "raw": "{\n  \"cursos\":[\"65de41ec99bbfd100abaee3b\"]\n}",
                 "form": []
             },
             "tests": []

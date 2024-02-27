@@ -24,8 +24,7 @@ const ProfesorSchema = Schema({
     },
     role:{
         type: String,
-        require: true,
-        enum: ["TEACHER_ROLE"]
+        default: "TEACHER_ROLE"
     },
     cursos:{
         type: [mongoose.Schema.Types.ObjectId],
